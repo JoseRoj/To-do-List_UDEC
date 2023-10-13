@@ -196,6 +196,13 @@ class _TaskState extends State<Task> {
 
                               saveCards();
                               //loadCards();
+                            } else {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                  content: Text(
+                                      'Asegurate que los campos de fecha esten llenos'),
+                                ),
+                              );
                             }
                           } else {
                             ScaffoldMessenger.of(context).showSnackBar(
