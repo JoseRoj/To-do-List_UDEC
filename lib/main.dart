@@ -97,36 +97,6 @@ class _LoginState extends State<Login> {
                         formKey: formKeyLogin,
                         obscure: false,
                       ),
-                      /*const Text("Login",
-                          style: TextStyle(fontSize: 20, color: Colors.black)),
-                      Container(
-                        margin: const EdgeInsets.only(bottom: 20),
-                        width: MediaQuery.of(context).size.width * 0.60,
-                        child: Form(
-                          key: _formKey,
-                          child: TextFormField(
-                            keyboardType: TextInputType.text,
-                            //controller: controller,
-                            decoration: const InputDecoration(
-                              labelText: 'Ej: jorojas@udec.cl',
-                              contentPadding: EdgeInsets.symmetric(
-                                  horizontal: 10, vertical: 15),
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  width: 2,
-                                  color: Colors.greenAccent,
-                                ),
-                              ),
-                            ),
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Por favor, ingresa un valor';
-                              }
-                              return null;
-                            },
-                          ),
-                        ),
-                      ),*/
                       buildForm(
                         exText: "",
                         title: "Password",
@@ -137,36 +107,6 @@ class _LoginState extends State<Login> {
                         formKey: formKeypassword,
                         obscure: true,
                       )
-
-                      /*const Text("Password",
-                          style: TextStyle(fontSize: 20, color: Colors.black)),
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.60,
-                        child: Form(
-                          //key: _formKey,
-                          child: TextFormField(
-                            keyboardType: TextInputType.number,
-                            //controller: controller,
-                            decoration: const InputDecoration(
-                              labelText: 'Ingresa tu clave',
-                              contentPadding: EdgeInsets.symmetric(
-                                  horizontal: 10, vertical: 15),
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  width: 2,
-                                  color: Colors.greenAccent,
-                                ),
-                              ),
-                            ),
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Por favor, ingresa un valor';
-                              }
-                              return null;
-                            },
-                          ),
-                        ),
-                      ),*/
                     ],
                   ),
                 ),

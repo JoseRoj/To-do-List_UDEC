@@ -8,11 +8,10 @@ class register extends StatefulWidget {
 }
 
 class _registerState extends State<register> {
-  TextEditingController _nameController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
-  TextEditingController _ReppasswordController = TextEditingController();
-
-  TextEditingController _mailController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _reppasswordController = TextEditingController();
+  final TextEditingController _mailController = TextEditingController();
   String nombre = "";
   String email = "";
   String contrasena = "";
@@ -71,7 +70,7 @@ class _registerState extends State<register> {
         children: <Widget>[
           Center(
             child: Container(
-              margin: EdgeInsets.only(bottom: 20, top: 0),
+              margin: const EdgeInsets.only(bottom: 20, top: 0),
               height: MediaQuery.of(context).size.height * 0.10,
               width: MediaQuery.of(context).size.width * 0.5, //0.6,
               decoration: BoxDecoration(
@@ -92,7 +91,7 @@ class _registerState extends State<register> {
                     color: Theme.of(context).primaryColor),*/
                 Container(
                   padding: const EdgeInsets.only(left: 25, top: 20),
-                  height: MediaQuery.of(context).size.height * 0.5,
+                  height: MediaQuery.of(context).size.height * 0.51,
                   width: MediaQuery.of(context).size.width * 0.7,
                   decoration: BoxDecoration(
                     color: const Color.fromARGB(255, 255, 255, 255),
@@ -127,7 +126,7 @@ class _registerState extends State<register> {
                         minLines: 1,
                         maxLines: 1,
                         size: sizeForms,
-                        controller: _ReppasswordController,
+                        controller: _reppasswordController,
                         formKey: _formRepKeypassword,
                         obscure: true,
                       ),
@@ -141,170 +140,9 @@ class _registerState extends State<register> {
                         formKey: _formKeyname,
                         obscure: false,
                       ),
-                      /*const Text("Login",
-                          style: TextStyle(fontSize: 20, color: Colors.black)),
-                      Container(
-                        margin: EdgeInsets.only(bottom: 10),
-                        width: MediaQuery.of(context).size.height * 0.25,
-                        child: Form(
-                          //key: _formKey,
-                          child: TextFormField(
-                            keyboardType: TextInputType.text,
-                            //controller: controller,
-                            decoration: const InputDecoration(
-                              labelText: "ej: jorojas2019@udec.cl",
-                              contentPadding: EdgeInsets.symmetric(
-                                  horizontal: 10, vertical: 15),
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  width: 2,
-                                  color: Colors.greenAccent,
-                                ),
-                              ),
-                            ),
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Por favor, ingresa un valor';
-                              }
-                              try {
-                                double.parse(value);
-                                return null; // Valor válido
-                              } catch (e) {
-                                return 'Ingresa un valor entero válido';
-                              }
-                            },
-                          ),
-                        ),
-                      ),*/
-                      /*const Text("Password",
-                          style: TextStyle(fontSize: 20, color: Colors.black)),
-                      Container(
-                        margin: EdgeInsets.only(bottom: 10),
-                        width: sizeForms,
-                        child: Form(
-                          //key: _formKey,
-                          child: TextFormField(
-                            keyboardType: TextInputType.number,
-                            //controller: controller,
-                            decoration: const InputDecoration(
-                              labelText: 'Ingresa tu clave',
-                              contentPadding: EdgeInsets.symmetric(
-                                  horizontal: 10, vertical: 15),
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  width: 2,
-                                  color: Colors.greenAccent,
-                                ),
-                              ),
-                            ),
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Por favor, ingresa un valor';
-                              }
-                              try {
-                                double.parse(value);
-                                //print(valor);
-                                return null; // Valor válido
-                              } catch (e) {
-                                return 'Ingresa un valor entero válido';
-                              }
-                            },
-                          ),
-                        ),
-                      ),
-                      const Text("Repetir Password",
-                          style: TextStyle(fontSize: 20, color: Colors.black)),
-                      Container(
-                        margin: EdgeInsets.only(bottom: 10),
-                        width: MediaQuery.of(context).size.height * 0.25,
-                        child: Form(
-                          //key: _formKey,
-                          child: TextFormField(
-                            keyboardType: TextInputType.number,
-                            //controller: controller,
-                            decoration: const InputDecoration(
-                              labelText: 'Ingresa tu clave',
-                              contentPadding: EdgeInsets.symmetric(
-                                  horizontal: 10, vertical: 15),
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  width: 2,
-                                  color: Colors.greenAccent,
-                                ),
-                              ),
-                            ),
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Por favor, ingresa un valor';
-                              }
-                              try {
-                                double.parse(value);
-                                //print(valor);
-                                return null; // Valor válido
-                              } catch (e) {
-                                return 'Ingresa un valor entero válido';
-                              }
-                            },
-                          ),
-                        ),
-                      ),
-                      const Text("Nombre",
-                          style: TextStyle(fontSize: 20, color: Colors.black)),
-                      Container(
-                        margin: EdgeInsets.only(bottom: 10),
-                        width: MediaQuery.of(context).size.height * 0.25,
-                        child: Form(
-                          //key: _formKey,
-                          child: TextFormField(
-                            keyboardType: TextInputType.number,
-                            //controller: controller,
-                            decoration: const InputDecoration(
-                              labelText: 'Ingresa tu clave',
-                              contentPadding: EdgeInsets.symmetric(
-                                  horizontal: 10, vertical: 15),
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  width: 2,
-                                  color: Colors.greenAccent,
-                                ),
-                              ),
-                            ),
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Por favor, ingresa un valor';
-                              }
-                              try {
-                                double.parse(value);
-                                //print(valor);
-                                return null; // Valor válido
-                              } catch (e) {
-                                return 'Ingresa un valor entero válido';
-                              }
-                            },
-                          ),
-                        ),
-                      ),*/
                     ],
                   ),
                 ),
-                /*Positioned(
-                  bottom: 0,
-                  width: MediaQuery.of(context).size.width * 0.5,
-                  height: 70,
-                  right: MediaQuery.of(context).size.width * 0.7 / 2 -
-                      MediaQuery.of(context).size.width * 0.5 / 2,
-
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Color.fromARGB(255, 4, 38, 255),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                    ),
-                    child: const Text('Acceder',
-                        style: TextStyle(color: Colors.white)),
-                  ),
-                ),*/
               ],
             ),
           ),
@@ -316,17 +154,17 @@ class _registerState extends State<register> {
                 if (_formKeyname.currentState!.validate() &&
                     _formKeymail.currentState!.validate() &&
                     _formKeypassword.currentState!.validate()) {
-                  if (_ReppasswordController.text == _passwordController.text) {
+                  if (_reppasswordController.text == _passwordController.text) {
                     _savePreferences();
                     _loadPreferences();
                     ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
+                      const SnackBar(
                         content: Text('Preferencias guardadas con éxito'),
                       ),
                     );
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
+                      const SnackBar(
                         content: Text('Contraseñas diferentes'),
                       ),
                     );
@@ -338,7 +176,7 @@ class _registerState extends State<register> {
                   MediaQuery.of(context).size.width * 0.7,
                   MediaQuery.of(context).size.height * 0.04,
                 ),
-                backgroundColor: Color.fromARGB(255, 4, 38, 255),
+                backgroundColor: const Color.fromARGB(255, 4, 38, 255),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)),
               ),
